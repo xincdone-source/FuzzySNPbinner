@@ -1,0 +1,19 @@
+#' Preview Fuzzy Parameters for a Given TSV
+#'
+#' @param tsv 输入TSV
+#' @param preview_k 窗口bp，默认200000
+#' @return 一个包含 min_length, min_ratio, min_bin_size 的列表
+#' @export
+plot_fuzzy_params <- function(tsv, preview_k = 200000L) {
+  if (!file.exists(tsv)) stop("File not found: ", tsv)
+  fm <- system.file("python/fuzzy_module.py", package = "FuzzySNPbinner")
+  su <- system.file("python/stats_utils.py", package = "FuzzySNPbinner")
+  reticulate::source_python(fm)
+  reticulate::source_python(su)
+  stats <- estimate_stats(tsv, window_bp = as.integer(preview_k))
+  mu <- calibrate_memberships(stats)
+  params <- infer_params(mu)
+  message(sprintf("min_length=%d bp, min_ratio=%.3f, min_bin_size=%d bp",
+                  params$min_length, params$min_ratio, params$min_bin_size))
+  invisible(params)
+}

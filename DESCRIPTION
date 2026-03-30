@@ -1,0 +1,23 @@
+Package: FuzzySNPbinner
+Type: Package
+Title: Fuzzy-Optimized Crosspoints and BIN Mapping for Multi-crop SNP Data
+Version: 0.1.0
+Authors@R: c(person(given = "Your", family = "Name", email = "your_email@example.com", role = c("aut", "cre")))
+Description: Modify SNPbinner's crosspoint detection and binning with fuzzy mathematics
+  for adaptive parameters across crops. Provides R interfaces and visualization, while
+  the algorithmic novelty lives in the Python layer that augments the original SNPbinner.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.1)
+Imports:
+    reticulate,
+    ggplot2,
+    dplyr,
+    readr,
+    tidyr
+Suggests:
+    testthat,
+    knitr,
+    rmarkdown
+RoxygenNote: 7.3.3
