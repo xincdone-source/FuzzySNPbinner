@@ -47,4 +47,4 @@ fuzzy_run_bins(
   input_path = out_crosp, 
   output_path = out_bin, 
   min_bin_size = my_min_bin_size
-)```
+)
