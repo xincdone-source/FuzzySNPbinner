@@ -17,10 +17,12 @@ if (!requireNamespace("devtools", quietly = TRUE))
 devtools::install_github("xincdone-source/FuzzySNPbinner")
 
 library(FuzzySNPbinner)
+```
 
-## 2. Quick Start (快速上手)
+## 3. Quick Start (快速上手)
 我们提供了一个极小的内置测试数据集，您可以通过以下代码快速体验完整的分析流程：
 
+```R
 # 1. 获取内置测试数据路径 (极小测试片段)
 test_tsv <- system.file("extdata", "test_data.tsv", package = "FuzzySNPbinner")
 
@@ -45,4 +47,4 @@ fuzzy_run_bins(
   input_path = out_crosp, 
   output_path = out_bin, 
   min_bin_size = my_min_bin_size
-)
+)```
