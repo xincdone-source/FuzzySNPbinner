@@ -1,7 +1,7 @@
 # FuzzySNPbinner
 
 Fuzzy-Optimized Crosspoints and BIN Mapping for Multi-crop SNP Data.
-This R package modifies the original SNPbinner's crosspoint detection and binning by incorporating fuzzy mathematics for adaptive parameters across different crops.
+This R package implements adaptive parameters for different crops by introducing fuzzy mathematics.
 
 ## 1. Prerequisites (环境要求)
 - **R** (>= 4.1)
